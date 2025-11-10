@@ -1,97 +1,124 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    ARCADE PLATFORM DESIGN SYSTEM                          ║
+║                      Pixel-Perfect Implementation                         ║
+║                   Extracted from ai-generated-preview.png                 ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* ═══ ARCADE COLOR SYSTEM (Converted to HSL) ═══ */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Background Colors - Dark Navy Theme */
+  --background: 232 33% 14%;           /* #1a1b2e - Main background */
+  --foreground: 0 0% 100%;             /* #FFFFFF - White text */
 
-  /* Popovers with white background */
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --card: 236 25% 19%;                 /* #252640 - Card background */
+  --card-foreground: 0 0% 100%;        /* White text on cards */
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  --popover: 236 25% 19%;
+  --popover-foreground: 0 0% 100%;
+
+  /* Primary Accent - Electric Blue */
+  --primary: 207 90% 54%;              /* #2196F3 - Electric blue */
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary Accent - Orange */
+  --secondary: 32 100% 50%;            /* #FF9800 - Orange */
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Additional Arcade Accents */
+  --accent-pink: 328 100% 54%;         /* #FF1493 - Hot pink/magenta */
+  --accent-purple: 291 64% 42%;        /* #9C27B0 - Purple */
+  --accent-green: 120 100% 50%;        /* #00FF00 - Neon green */
+  --accent-yellow: 51 100% 50%;        /* #FFD700 - Gold yellow */
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Muted/Secondary Text */
+  --muted: 237 23% 29%;                /* Elevated surfaces */
+  --muted-foreground: 0 0% 69%;        /* #B0B0B0 - Light gray text */
 
-  /* Destructive: Clean red */
-  --destructive: 0 70% 50%;
+  --accent: 328 100% 54%;              /* Pink accent */
+  --accent-foreground: 0 0% 100%;
+
+  /* Status Colors */
+  --destructive: 4 90% 58%;            /* #F44336 - Error red */
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  --success: 122 39% 49%;              /* #4CAF50 - Success green */
+  --warning: 32 100% 50%;              /* #FF9800 - Warning orange */
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Borders & Inputs */
+  --border: 237 23% 29%;
+  --input: 236 25% 19%;
+  --ring: 328 100% 54%;                /* Pink focus ring */
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  /* Border Radius System */
+  --radius: 1rem;                      /* 16px - card radius */
+  --radius-lg: 1rem;
+  --radius-md: 0.5rem;                 /* 8px - button radius */
+  --radius-sm: 0.25rem;
+
+  /* Sidebar (using main arcade colors) */
+  --sidebar-background: 232 33% 14%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 328 100% 54%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 236 25% 19%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 237 23% 29%;
+  --sidebar-ring: 328 100% 54%;
+
+  /* ═══ ARCADE CUSTOM PROPERTIES ═══ */
+
+  /* Spacing System (8px grid) */
+  --space-1: 0.5rem;    /* 8px */
+  --space-2: 1rem;      /* 16px */
+  --space-3: 1.5rem;    /* 24px */
+  --space-4: 2rem;      /* 32px */
+  --space-6: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+
+  /* Typography */
+  --font-display: 'Exo 2', 'Orbitron', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', 'Roboto', sans-serif;
+
+  /* Shadows & Effects */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 30px rgba(255, 20, 147, 0.4);
+  --glow-pink: 0 0 20px rgba(255, 20, 147, 0.6);
+  --glow-blue: 0 0 20px rgba(33, 150, 243, 0.6);
+
+  /* Gradients */
+  --gradient-card-border: linear-gradient(135deg, #FF00FF 0%, #9C27B0 50%, #673AB7 100%);
+  --gradient-button-pink: linear-gradient(90deg, #FF1493 0%, #FF69B4 100%);
+  --gradient-hero-bg: linear-gradient(180deg, rgba(26,27,46,0.8) 0%, rgba(26,27,46,0.95) 100%);
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
-  --sidebar-background: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  /* Dark mode uses the same arcade colors - this IS the dark theme */
+  --background: 232 33% 14%;
+  --foreground: 0 0% 100%;
+  --card: 236 25% 19%;
+  --card-foreground: 0 0% 100%;
+  --popover: 236 25% 19%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 32 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 237 23% 29%;
+  --muted-foreground: 0 0% 69%;
+  --accent: 328 100% 54%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 4 90% 58%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 237 23% 29%;
+  --input: 236 25% 19%;
+  --ring: 328 100% 54%;
 }
 
 @theme {
@@ -164,40 +191,224 @@ All colors MUST be HSL.
   }
 }
 
+/* ═══ GLOBAL RESETS ═══ */
+
 * {
   border-color: hsl(var(--border));
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
 }
 
-/* Minimal, clean typography */
+/* ═══ TYPOGRAPHY SYSTEM ═══ */
+
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 700;
   letter-spacing: -0.025em;
   color: hsl(var(--foreground));
+  margin: 0;
+  line-height: 1.2;
 }
 
-/* Clean button styles */
+h1 {
+  font-size: 3.5rem;    /* 56px */
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: 2.5rem;    /* 40px */
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 2rem;      /* 32px */
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.5rem;    /* 24px */
+}
+
+h5 {
+  font-size: 1.25rem;   /* 20px */
+}
+
+h6 {
+  font-size: 1.125rem;  /* 18px */
+}
+
+p {
+  margin: 0;
+  line-height: 1.75;
+}
+
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: hsl(var(--accent));
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* ═══ BUTTON DEFAULTS ═══ */
+
 button {
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 250ms ease;
 }
 
-/* Subtle shadows for depth */
+/* ═══ FORM DEFAULTS ═══ */
+
+input, select, textarea {
+  font-family: var(--font-body);
+  background-color: hsl(var(--input));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  transition: all 150ms ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsla(var(--ring) / 0.2);
+}
+
+/* ═══ ARCADE SHADOWS & EFFECTS ═══ */
+
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: var(--shadow-card);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-card-hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ═══ ARCADE GLOW EFFECTS ═══ */
+
+.glow-pink {
+  text-shadow: var(--glow-pink);
+}
+
+.glow-blue {
+  text-shadow: var(--glow-blue);
+}
+
+/* ═══ ARCADE GRADIENTS ═══ */
+
+.gradient-card-border {
+  border: 2px solid transparent;
+  background-image: var(--gradient-card-border);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.gradient-button-pink {
+  background: var(--gradient-button-pink);
+}
+
+/* ═══ SCROLLBAR STYLING ═══ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* ═══ UTILITY CLASSES ═══ */
+
+.text-gradient-hero {
+  background: linear-gradient(180deg, hsl(var(--accent-yellow)) 0%, hsl(var(--accent-pink)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.online-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: hsl(var(--accent-green));
+  border-radius: 50%;
+  box-shadow: 0 0 8px hsla(var(--accent-green) / 0.8);
+}
+
+/* ═══ ANIMATIONS ═══ */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
